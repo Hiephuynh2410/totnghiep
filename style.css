@@ -1,0 +1,677 @@
+    /* MÀU SẮC VÀ PHÔNG CHỮ */
+    :root {
+      --green: #193d37;
+      --gold: #ad8952;
+      --cream: #f6f2e9;
+      --ink: #273d36;
+      --muted: #72776d;
+      --line: #d9d4c6
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: Arial, sans-serif;
+      min-height: 100svh
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .15;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23989888' filter='url(%23n)' opacity='.22' d='M0 0h180v180H0z'/%3E%3C/svg%3E")
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer
+    }
+
+    button:focus-visible,
+    a:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 6px
+    }
+
+    button:disabled {
+      cursor: default
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent
+    }
+
+    [hidden] {
+      display: none !important
+    }
+
+    .serif,
+    h1,
+    h2 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-weight: normal
+    }
+
+    .eyebrow {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      line-height: 1.8;
+      color: var(--gold)
+    }
+
+    header {
+      height: 88px;
+      border-bottom: 1px solid var(--line);
+      margin: 0 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between
+    }
+
+    .brand {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      font-size: 11px;
+      letter-spacing: 2px
+    }
+
+    .monogram {
+      border: 1px solid var(--gold);
+      width: 39px;
+      height: 39px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      font-family: Georgia, serif;
+      font-size: 17px;
+      letter-spacing: 0;
+      color: var(--green)
+    }
+
+    .header-note {
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 2px
+    }
+
+    .screen {
+      width: min(960px, 90%);
+      margin: 0 auto;
+      text-align: center;
+      animation: appear .7s both
+    }
+
+    .intro {
+      padding: 55px 0 25px
+    }
+
+    h1 {
+      font-size: clamp(38px, 5vw, 62px);
+      line-height: 1.15;
+      margin: 15px 0 18px;
+      letter-spacing: -1.5px
+    }
+
+    h1 em {
+      color: var(--gold);
+      font-weight: normal
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.9;
+      margin: 0
+    }
+
+    .rule {
+      width: 42px;
+      height: 1px;
+      background: var(--gold);
+      margin: 24px auto
+    }
+
+    /* PHONG THƯ: toàn bộ được vẽ bằng CSS, không cần ảnh */
+    .envelope-button {
+      display: block;
+      position: relative;
+      width: min(440px, 86vw);
+      height: 270px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      margin: 45px auto 30px;
+      perspective: 1000px;
+      transition: transform .35s;
+      isolation: isolate
+    }
+
+    .envelope-button:hover {
+      transform: translateY(-6px)
+    }
+
+    .envelope {
+      position: absolute;
+      inset: 0;
+      background: #d6cbb4;
+      box-shadow: 0 25px 48px #193d3722;
+      border-radius: 4px
+    }
+
+    .letter-peek {
+      position: absolute;
+      inset: 15px 24px 20px;
+      background: #fffcf5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 23px 12px;
+      transition: transform .8s .25s;
+      z-index: 1;
+      box-shadow: 0 0 10px #00000009
+    }
+
+    .letter-peek span {
+      font-family: Georgia, serif;
+      font-size: 22px;
+      margin-top: 7px
+    }
+
+    .letter-peek small {
+      font-size: 8px;
+      letter-spacing: 3px;
+      color: var(--gold)
+    }
+
+    .envelope-front {
+      position: absolute;
+      inset: 0;
+      background: #e8dfcc;
+      clip-path: polygon(0 0, 50% 51%, 100% 0, 100% 100%, 0 100%);
+      z-index: 3;
+      border-radius: 4px
+    }
+
+    .envelope-bottom {
+      position: absolute;
+      inset: 0;
+      background: #eee5d3;
+      clip-path: polygon(0 100%, 50% 45%, 100% 100%);
+      z-index: 4
+    }
+
+    .flap {
+      position: absolute;
+      inset: 0;
+      background: #ded3bb;
+      clip-path: polygon(0 0, 100% 0, 50% 53%);
+      transform-origin: top;
+      transition: transform .65s, z-index .2s .3s;
+      z-index: 5;
+      backface-visibility: hidden
+    }
+
+    .seal {
+      position: absolute;
+      z-index: 6;
+      left: calc(50% - 31px);
+      top: calc(50% - 16px);
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      color: #dbc28f;
+      background: var(--green);
+      border: 4px double #426358;
+      box-shadow: 1px 4px 8px #0002;
+      display: grid;
+      place-items: center;
+      font: italic 23px Georgia, serif;
+      transition: opacity .3s, transform .5s
+    }
+
+    .envelope-caption {
+      position: absolute;
+      z-index: 5;
+      bottom: 24px;
+      left: 0;
+      right: 0;
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: #817254
+    }
+
+    .opening .flap {
+      transform: rotateX(180deg);
+      z-index: 0
+    }
+
+    .opening .seal {
+      opacity: 0;
+      transform: scale(.8)
+    }
+
+    .opening .letter-peek {
+      transform: translateY(-100px)
+    }
+
+    .open-hint {
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--muted);
+      margin: 0 0 44px
+    }
+
+    .open-hint span {
+      display: inline-block;
+      color: var(--gold);
+      margin-right: 8px
+    }
+
+    .bottom-note {
+      font: italic 16px Georgia, serif;
+      color: #8d8e80;
+      margin: 20px 0 38px
+    }
+
+    /* CHỌN NGƯỜI NHẬN */
+    .back {
+      border: 0;
+      background: none;
+      color: var(--muted);
+      padding: 12px 0;
+      font-size: 12px;
+      display: block;
+      margin: 22px 0 0
+    }
+
+    .back:hover {
+      color: var(--green)
+    }
+
+    .selection-intro {
+      padding: 15px 0 30px
+    }
+
+    .selection-intro h1 {
+      font-size: 44px
+    }
+
+    .guest-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      max-width: 760px;
+      margin: auto
+    }
+
+    .guest {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      text-align: left;
+      padding: 19px 22px;
+      border: 1px solid var(--line);
+      background: #fffcf66b;
+      color: var(--ink);
+      transition: background .2s, transform .2s, border-color .2s;
+      min-height: 83px
+    }
+
+    .guest:hover {
+      background: #fffdf7;
+      border-color: var(--gold);
+      transform: translateY(-2px)
+    }
+
+    .guest-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #e9e9dc;
+      color: var(--green);
+      font: 17px Georgia, serif;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0
+    }
+
+    .guest-name {
+      display: block;
+      font: 18px Georgia, serif;
+      line-height: 1.4
+    }
+
+    .guest-meta {
+      font-size: 9px;
+      letter-spacing: 1.6px;
+      color: var(--muted);
+      margin-top: 5px;
+      display: block;
+      text-transform: uppercase
+    }
+
+    .arrow {
+      margin-left: auto;
+      color: var(--gold)
+    }
+
+    .guest:last-child {
+      grid-column: 1/-1
+    }
+
+    .selection-footer {
+      margin: 29px 0 40px;
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.8
+    }
+
+    /* LÁ THƯ RIÊNG */
+    .letter-screen {
+      max-width: 820px
+    }
+
+    .invitation {
+      position: relative;
+      background: #fffdf7;
+      border: 1px solid #d7cbb2;
+      padding: 48px 58px;
+      margin: 12px 0 35px;
+      box-shadow: 0 15px 60px #193d370a;
+      text-align: center
+    }
+
+    .invitation::before {
+      content: "";
+      position: absolute;
+      inset: 10px;
+      border: 1px solid #e9e1d1;
+      pointer-events: none
+    }
+
+    .cap {
+      width: 56px;
+      height: 40px;
+      margin: 0 auto 22px;
+      color: var(--gold)
+    }
+
+    .invitation h1 {
+      font-size: clamp(33px, 5vw, 48px);
+      margin: 12px 0 8px
+    }
+
+    .graduate {
+      font: 24px Georgia, serif;
+      color: var(--gold);
+      margin: 14px 0 28px
+    }
+
+    .salutation {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 20px 0 10px
+    }
+
+    .recipient {
+      font: clamp(25px, 4vw, 33px) Georgia, serif;
+      margin: 0 0 24px
+    }
+
+    .personal-message {
+      font-size: 15px;
+      line-height: 1.95;
+      text-align: left;
+      color: #586257
+    }
+
+    .personal-message p {
+      margin: 0 0 15px
+    }
+
+    .event-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 20px 0;
+      gap: 23px;
+      margin: 28px 0
+    }
+
+    .detail-label {
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 10px
+    }
+
+    .detail-value {
+      font: 19px Georgia, serif;
+      min-height: 24px;
+      display: block;
+      white-space: pre-wrap
+    }
+
+    .empty-field {
+      display: block;
+      width: 80%;
+      height: 24px;
+      border-bottom: 1px dotted #b5ab94;
+      margin: auto
+    }
+
+    .location {
+      grid-column: 1/-1
+    }
+
+    .location .empty-field {
+      max-width: 320px
+    }
+
+    .closing {
+      font: italic 18px Georgia, serif;
+      line-height: 1.6;
+      color: #758071;
+      margin: 26px 0 15px
+    }
+
+    .signature {
+      font: italic 30px Georgia, serif;
+      color: var(--green);
+      margin: 0 0 8px
+    }
+
+    .signature-caption {
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: var(--muted)
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 35px
+    }
+
+    .action {
+      padding: 13px 22px;
+      border: 1px solid var(--green);
+      background: var(--green);
+      color: #fffdf7;
+      font-size: 12px
+    }
+
+    .action.secondary {
+      background: transparent;
+      color: var(--green)
+    }
+
+    footer {
+      text-align: center;
+      color: #868a7d;
+      font-size: 9px;
+      letter-spacing: 2px;
+      padding: 20px 15px 25px
+    }
+
+    h1:focus,
+    h2:focus {
+      outline: none
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(16px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    @media(min-width:1100px) {
+      .intro {
+        padding-top: 65px
+      }
+
+      .envelope-button {
+        margin-top: 50px
+      }
+    }
+
+    @media(max-width:600px) {
+      header {
+        height: 72px;
+        margin: 0 6%
+      }
+
+      .brand {
+        font-size: 9px;
+        gap: 9px
+      }
+
+      .header-note {
+        font-size: 8px;
+        letter-spacing: 1px
+      }
+
+      .intro {
+        padding-top: 44px
+      }
+
+      h1 {
+        letter-spacing: -1px
+      }
+
+      .subtitle {
+        font-size: 13px
+      }
+
+      .envelope-button {
+        height: 220px;
+        margin-top: 46px
+      }
+
+      .guest-list {
+        grid-template-columns: 1fr
+      }
+
+      .guest:last-child {
+        grid-column: auto
+      }
+
+      .guest {
+        padding: 15px 17px;
+        min-height: 75px
+      }
+
+      .selection-intro h1 {
+        font-size: 35px
+      }
+
+      .invitation {
+        padding: 37px 27px
+      }
+
+      .personal-message {
+        font-size: 14px
+      }
+
+      .graduate {
+        font-size: 21px
+      }
+
+      .event-details {
+        gap: 20px 12px
+      }
+
+      .actions {
+        flex-wrap: wrap
+      }
+
+      .bottom-note {
+        font-size: 14px
+      }
+
+      .open-hint {
+        font-size: 10px;
+        letter-spacing: 1px
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important
+      }
+
+      .opening .letter-peek {
+        transform: none
+      }
+    }
+
+    @media print {
+      body {
+        background: white
+      }
+
+      header,
+      footer,
+      .back,
+      .actions {
+        display: none !important
+      }
+
+      .screen {
+        width: 100%;
+        max-width: 100%
+      }
+
+      .invitation {
+        box-shadow: none;
+        margin: 0;
+        border: 1px solid #d7cbb2;
+        break-inside: avoid
+      }
+    }
