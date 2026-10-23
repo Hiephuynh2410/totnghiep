@@ -1,0 +1,36 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "outputDirectory": "public",
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/bao",
+      "destination": "/bao/index.html"
+    },
+    {
+      "source": "/quan",
+      "destination": "/quan/index.html"
+    },
+    {
+      "source": "/loc",
+      "destination": "/loc/index.html"
+    },
+    {
+      "source": "/thao",
+      "destination": "/thao/index.html"
+    },
+    {
+      "source": "/my",
+      "destination": "/my/index.html"
+    },
+    {
+      "source": "/thay-thinh",
+      "destination": "/thay-thinh/index.html"
+    },
+    {
+      "source": "/co-phuong",
+      "destination": "/co-phuong/index.html"
+    }
+  ]
+}

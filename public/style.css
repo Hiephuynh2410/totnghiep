@@ -675,3 +675,4 @@
         break-inside: avoid
       }
     }
+#cover-recipient { font-family: Georgia, serif; color: var(--gold); margin: 0 0 16px; }
