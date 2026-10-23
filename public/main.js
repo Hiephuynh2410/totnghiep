@@ -20,10 +20,45 @@ const GUESTS = [
   },
   { id: "quan", name: "Lê Minh Quân", initial: "Q", type: "Cốt iu", salutation: "Gửi Quân — cốt iu của Hiệp", message: ["Cốt của Hiệp ơi, Hiệp sắp tốt nghiệp thạc sĩ rồi nè! Ngày vui này mà có cốt đứng cạnh, cười cùng và chụp chung một tấm hình thì còn gì bằng.", "Thư này gửi riêng cho cốt đó. Hôm ấy ráng sắp xếp đến với Hiệp nha, mình gặp nhau, tám chuyện và chụp hình cho đã. Có một đứa bạn thân đến chung vui là Hiệp thấy ngày đó đủ đầy hơn nhiều rồi.", "Chúc cốt luôn vững vàng với điều mình chọn, làm nghiên cứu có niềm vui và nhớ dành thời gian nghỉ ngơi nữa nha. Chặng đường phía trước, mong tụi mình còn được mừng thật nhiều cột mốc của nhau."], closing: "Đến với Hiệp nha cốt. Thương Quân nhiều!" },
   { id: "loc", name: "Phạm Quang Lộc", initial: "L", type: "Cốt iu", salutation: "Gửi Lộc — cốt iu của Hiệp", message: ["Lộc ơi, báo tin vui cho cốt nè: Hiệp sắp được mặc áo tốt nghiệp thạc sĩ rồi! Hiệp muốn hôm đó có Lộc đến, để tấm hình ngày tốt nghiệp có thêm gương mặt đứa bạn thân của mình.", "Cốt đến chung vui với Hiệp nha. Chẳng cần quà cáp gì đâu, có mặt, cười thật tươi và chụp với Hiệp vài tấm hình là quý lắm rồi. Mình giữ lại một kỷ niệm để sau này nhìn lại còn có chuyện mà kể.", "Chúc cốt bớt những ngày căng thẳng, thêm những ngày vui, luôn tin vào bản thân và đi được đến nơi mình muốn. Mong cả hai đứa mình đều sẽ có thật nhiều tin vui để khoe với nhau."], closing: "Hẹn gặp Lộc nha cốt. Có cốt là vui thêm một khúc!" },
-  { id: "thao", name: "Trần Phương Thảo", initial: "T", type: "Em thương quý", salutation: "Gửi Thảo", message: ["Thảo ơi, Hiệp gửi Thảo một lời mời nhỏ cho một ngày thật đặc biệt: ngày Hiệp tốt nghiệp thạc sĩ.", "Hiệp rất vui nếu Thảo có thể đến dự lễ, cùng chúc mừng và lưu lại những tấm hình kỷ niệm. Sự hiện diện của Thảo sẽ là một phần thật đẹp trong ngày vui này."], closing: "Mong được gặp Thảo trong ngày tốt nghiệp!" },
+  {
+    id: "thao",
+    name: "Trần Phương Thảo",
+    initial: "T",
+    type: "Gửi em Thảo",
+    salutation: "Gửi Thảo",
+    message: [
+      "Thảo ơi, anh sắp tốt nghiệp thạc sĩ rồi. Anh mời em đến dự lễ và chung vui với anh nha.",
+      "Hôm đó nếu sắp xếp được thì em ghé, chụp với anh vài tấm hình kỷ niệm nhé!"
+    ],
+    closing: "Hẹn gặp em hôm đó nha!"
+  },
   { id: "my", name: "VK CK My", initial: "M", type: "Một người đặc biệt", salutation: "Gửi người đặc biệt", message: ["My ơi, ngày Hiệp khoác lên mình chiếc áo tốt nghiệp thạc sĩ sắp đến rồi. Hiệp muốn dành riêng một lời mời thật ấm áp gửi đến My.", "Mong My có mặt trong khoảnh khắc này, cùng Hiệp mỉm cười, chụp những tấm hình thật đẹp và đón một dấu mốc mới. Có My bên cạnh, niềm vui của Hiệp sẽ thêm trọn vẹn."], closing: "Dành một chỗ thật đặc biệt cho My trong ngày vui này." },
-  { id: "thay-thinh", name: "Thầy Bùi Quang Thịnh", initial: "T", type: "Kính mời Thầy", salutation: "Kính gửi", message: ["Em kính mời Thầy Bùi Quang Thịnh đến tham dự lễ tốt nghiệp thạc sĩ của em, Huỳnh Văn Hiệp.", "Với em, đây là một dấu mốc đáng trân trọng trên hành trình học tập. Em rất vinh dự nếu được đón Thầy đến chung vui và cùng lưu lại những hình ảnh kỷ niệm trong ngày đặc biệt này.", "Em kính chúc Thầy nhiều sức khỏe và mong được đón tiếp Thầy tại buổi lễ."], closing: "Em trân trọng kính mời Thầy." },
-  { id: "co-phuong", name: "Cô Ngô Thị Mỹ Phượng", initial: "P", type: "Kính mời Cô", salutation: "Kính gửi", message: ["Em kính mời Cô Ngô Thị Mỹ Phượng đến tham dự lễ tốt nghiệp thạc sĩ của em, Huỳnh Văn Hiệp.", "Em mong được chia sẻ niềm vui và dấu mốc ý nghĩa này cùng Cô. Sự hiện diện của Cô sẽ là niềm vinh dự đối với em, đồng thời làm cho ngày tốt nghiệp thêm ấm áp và đáng nhớ.", "Em kính chúc Cô nhiều sức khỏe và mong có dịp chụp cùng Cô một tấm hình kỷ niệm tại buổi lễ."], closing: "Em trân trọng kính mời Cô." }
+  {
+    id: "thay-thinh",
+    name: "Thầy Bùi Quang Thịnh",
+    initial: "T",
+    type: "Kính mời Thầy",
+    salutation: "Kính gửi Thầy",
+    message: [
+      "Em kính mời Thầy đến tham dự lễ tốt nghiệp thạc sĩ của em, Huỳnh Văn Hiệp.",
+      "Em cảm ơn Thầy đã tận tình hướng dẫn, giúp đỡ và tạo điều kiện cho em trong suốt quá trình học tập, nghiên cứu. Nhờ sự chỉ bảo và động viên của Thầy, em mới có thể hoàn thành chặng đường này và có được ngày hôm nay.",
+      "Em rất mong Thầy có thể đến chung vui và chụp cùng em một tấm hình kỷ niệm. Em kính chúc Thầy nhiều sức khỏe và luôn giữ được niềm vui trong công việc."
+    ],
+    closing: "Em chân thành cảm ơn và trân trọng kính mời Thầy."
+  },
+  {
+    id: "co-phuong",
+    name: "Cô Ngô Thị Mỹ Phượng",
+    initial: "P",
+    type: "Kính mời Cô",
+    salutation: "Kính gửi Cô",
+    message: [
+      "Em kính mời Cô đến tham dự lễ tốt nghiệp thạc sĩ của em, Huỳnh Văn Hiệp.",
+      "Để có được ngày hôm nay, em rất biết ơn sự hướng dẫn và giúp đỡ của Thầy. Trong ngày vui này, em mong được đón cả Thầy và Cô đến chung vui, chụp cùng em vài tấm hình kỷ niệm.",
+      "Em kính chúc Cô nhiều sức khỏe, niềm vui và mong được gặp Cô tại buổi lễ."
+    ],
+    closing: "Em trân trọng kính mời Cô."
+  }
 ];
 
 
