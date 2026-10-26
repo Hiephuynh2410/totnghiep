@@ -44,7 +44,6 @@ const GUESTS = [
     ],
     closing: "Hẹn gặp em hôm đó nha!"
   },
-  { id: "my", name: "VK CK My", initial: "M", type: "Một người đặc biệt", salutation: "Gửi người đặc biệt", message: ["My ơi, ngày Hiệp khoác lên mình chiếc áo tốt nghiệp thạc sĩ sắp đến rồi. Hiệp muốn dành riêng một lời mời thật ấm áp gửi đến My.", "Mong My có mặt trong khoảnh khắc này, cùng Hiệp mỉm cười, chụp những tấm hình thật đẹp và đón một dấu mốc mới. Có My bên cạnh, niềm vui của Hiệp sẽ thêm trọn vẹn."], closing: "Dành một chỗ thật đặc biệt cho My trong ngày vui này." },
   {
     id: "thay-thinh",
     name: "Thầy Bùi Quang Thịnh",
