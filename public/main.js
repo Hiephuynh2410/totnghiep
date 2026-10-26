@@ -7,17 +7,17 @@ const EVENT = {
 
 const GUESTS = [
   {
-  id: "my-duy",
-  name: "Anh Duy & Chị My",
-  initial: "MD",
-  type: "Anh chị Hai",
-  salutation: "Gửi anh Duy, chị My",
-  message: [
-    "Anh chị Hai ơi, em sắp tốt nghiệp thạc sĩ rồi. Em mời anh chị đến dự lễ, chung vui với em nha.",
-    "Hôm đó anh chị sắp xếp ghé chụp với em vài tấm hình kỷ niệm nhé. Em học xong rồi, tới lượt anh chị lên hình cùng em!"
-  ],
-  closing: "Hẹn anh chị Hai hôm đó nha!"
-},
+    id: "van-khung",
+    name: "Vân",
+    initial: "V",
+    type: "Gửi con em Vân",
+    salutation: "Vân khùng ơi,",
+    message: [
+      "Anh sắp tốt nghiệp thạc sĩ rồi, mời em tới chung vui với anh nha. Bữa đó bớt khùng chút, nhường anh làm nhân vật chính một hôm.",
+      "Sắp xếp ghé chụp với anh vài tấm hình kỷ niệm nhé. Nhớ tới đúng giờ, đừng đợi anh nhận bằng xong mới hỏi đang ở đâu!"
+    ],
+    closing: "Hẹn gặp em, tới rồi khùng tiếp!"
+  },
   {
     id: "bao",
     name: "Đặng Đức Bảo",
