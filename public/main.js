@@ -7,7 +7,7 @@ const EVENT = {
 
 const GUESTS = [
   {
-    id: "van-khung",
+    id: "van",
     name: "Vân",
     initial: "V",
     type: "Gửi con em Vân",
