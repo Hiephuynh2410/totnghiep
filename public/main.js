@@ -7,6 +7,18 @@ const EVENT = {
 
 const GUESTS = [
   {
+    id: "anh-trung",
+    name: "Anh Trung",
+    initial: "T",
+    type: "Bạn học thạc sĩ",
+    salutation: "Gửi anh Trung,",
+    message: [
+      "Sắp tới em có lễ tốt nghiệp thạc sĩ nên muốn mời anh đến tham dự và chung vui cùng em.",
+      "Hôm đó nếu anh sắp xếp được thời gian thì ghé chụp vài tấm hình kỷ niệm với em nha!"
+    ],
+    closing: "Hẹn gặp anh hôm đó nhé!"
+  },
+  {
     id: "van-anh",
     name: "Vân Anh",
     initial: "V",
