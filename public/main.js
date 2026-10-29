@@ -2,7 +2,7 @@
 const EVENT = {
   date: "07/11/2026",
   time: "7h30",
-  location: "Khu Công nghệ cao TP.HCM, Đường D1, P.Long Thạnh Mỹ, Tăng Nhơn Phú, Hồ Chí Minh"
+  location: "10/80c Song Hành Xa Lộ Hà Nội, Tăng Nhơn Phú, Hồ Chí Minh"
 };
 
 const GUESTS = [
