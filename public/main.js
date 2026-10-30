@@ -1,7 +1,7 @@
 // Sửa ngày, giờ và địa điểm tại EVENT. Để "" để giữ dòng trống.
 const EVENT = {
   date: "07/11/2026",
-  time: "7h30",
+  time: "8h30",
   location: "10/80c Song Hành Xa Lộ Hà Nội, Tăng Nhơn Phú, Hồ Chí Minh"
 };
 
